@@ -1,13 +1,13 @@
 # scanner-sonar-jacoco
 Example to scan a project with SonarQube and take the coverage level of the unit tests reflected in the report.
 
-### Explaining branches: 
+### Explaining branches:
 
 1. Branch **adapter-pom**:
-    It contains only the dependency structure and plugins for the execution of unit tests, JACOCO and SonarQube configuration. :smirk:
-    <br/><br/>
+   It contains only the dependency structure and plugins for the execution of unit tests, JACOCO and SonarQube configuration. :smirk:
+   <br/><br/>
 
-2. Branch **connection-mongodb**: Contiene un ejemplo de conexión a la base de datos en local. El cual a nivel de proyecto los ENVIROMENT, se recuperan a través de IDE. Simulando un configserver.
+2. Branch **connection-mongodb**: Contains an example of connecting to the local database. Which at the project level, the ENVIROMENT, are recovered through IDE. Simulating a configserver.
    <br/><br/>
    Contains an example of connecting to the local database. Which at the project level, the ENVIROMENT, are recovered through IDE. Simulating a configserver.
    A unit test is left to be able to read and understand. At the test level, there is a properties file, which WILL ONLY BE USED FOR THE TESTS. :innocent: <br/><br/>
