@@ -12,6 +12,8 @@
 	<properties>
 		<java.version>17</java.version>
 		<mongo.version>4.4.2</mongo.version>
+		<sonar.coverage.exclusions>**/dto/**,**/model/**,**/entities/**,**/input/**,**/output/**,**/exceptions/**,**/wsdl/**,**/*Request.java/**,**/*Response.java/**,src/test/**,**/ScannerSonarJacocoApplication.java</sonar.coverage.exclusions>
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 	</properties>
 
 	<parent>
@@ -121,23 +123,27 @@
 				<version>0.8.7</version>
 				<configuration>
 					<destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+					<dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
 					<output>file</output>
 					<append>true</append>
 					<excludes>
-						<exclude>**/dto/**/*</exclude>
-						<exclude>**/entities/**/*</exclude>
-						<exclude>**/input/**/*</exclude>
-						<exclude>**/output/**/*</exclude>
-						<exclude>**/exceptions/**/*</exclude>
-						<exclude>**/wsdl/**/*</exclude>
-						<exclude>**/*Request.java/**/*</exclude>
-						<exclude>**/*Response.java/**/*</exclude>
-						<exclude>src/test/**</exclude>
+						<exclude>**/dto/**</exclude>
+						<exclude>**/model/**</exclude>
+						<exclude>**/entities/**</exclude>
+						<exclude>**/input/**</exclude>
+						<exclude>**/output/**</exclude>
+						<exclude>**/exceptions/**</exclude>
+						<exclude>**/wsdl/**</exclude>
+						<exclude>**/*Request.java/**</exclude>
+						<exclude>**/*Response.java/**</exclude>
+						<exclude>**/src/test/**</exclude>
+						<exclude>**/ScannerSonarJacocoApplication.java/**</exclude>
 					</excludes>
 				</configuration>
 				<executions>
 					<execution>
 						<id>jacoco-initialize</id>
+						<phase>test-compile</phase>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
